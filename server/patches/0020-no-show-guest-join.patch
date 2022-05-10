@@ -1,0 +1,16 @@
+diff --git a/app/channel.go b/app/channel.go
+index cd04ecae3..4195812bf 100644
+--- a/app/channel.go
++++ b/app/channel.go
+@@ -2271,6 +2271,11 @@ func (a *App) PostAddToChannelMessage(c *request.Context, user *model.User, adde
+ 		postType = model.PostTypeAddGuestToChannel
+ 	}
+ 
++	// __MATTERFOSS__: To avoid noise, we don't show when a guest is added to a channel.
++	if postType == model.PostTypeAddGuestToChannel {
++		return nil
++	}
++
+ 	post := &model.Post{
+ 		ChannelId: channel.Id,
+ 		Message:   message,
