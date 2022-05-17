@@ -82,6 +82,10 @@ mv ../MatterfossWeb/dist ./client
 ./bin/matterfoss
 ```
 
+## Nginx
+You can run MatterFOSS behind nginx using the example-nginx.conf file.
+This also allows you to host the frontend separately and even run multiple frontends.
+
 ## Customization
 
 If you just clicked on a link and found yourself here, it's probably because you or
